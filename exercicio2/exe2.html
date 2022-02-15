@@ -1,0 +1,38 @@
+ 
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8"/>
+<title>Exe02</title>
+</head>
+<script>
+    function verificaSenha(){
+        var numeros = /([0-9])/;
+        var alfabeto1 =/([A-Z])/;
+        var alfabeto2 = /([a-z])/;
+        var chEspeciais = /([~,!,@,#,$,%,^,&,*,-,_,+,=,?,>,<])/;
+        var pass = String(document.getElementById("password").value);
+        mostra = document.getElementById("passwordStrong");
+        console.log(pass);
+        console.log(pass.length);
+        if (pass.length < 6){
+            mostra.innerHTML = "<span style='color:red'>Fraco, faltam "+(6-pass.length)+" caracteres</span>";
+        }else{
+            if (pass.match(numeros) && pass.match(alfabeto1) && pass.match(alfabeto2) && pass.match(chEspeciais) ){
+                mostra.innerHTML = "<span style='color:green'>Forte</span>";
+            } else {
+                mostra.innerHTML = "<span style='color:orange'>Média, favor atender os requisitos</span>";
+            }
+        };
+    }
+</script>
+<body>
+<label>Digite seu nome:</label>
+<input id="nome"/><br>
+<label>Digite sua senha:</label>
+<input id="password" type="password" onkeyup="javascript:verificaSenha()" minlength="6"/>
+<button id="Submit" >OK</button><br>
+<span id="passwordStrong"></span>
+</body>
+
+</html>
