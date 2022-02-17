@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Exe03</title>
+</head>
+
+<body>
+    <label>digite a string:</label>
+    <input id="str" />
+    <button onclick="verficaanagrama()">Verificar</button>
+    <div>
+        <pre id="Resultado"></pre>
+    </div>
+</body>
+<script>
+    
+    function sortStrChars(str) {
+        if (!str) {
+            return;
+        }
+        str = str.split('');
+        str = str.sort();
+        str = str.join('');
+        return str;
+    }
+
+    function getGroupedAnagrams(words) {
+        const anagrams = {}; // {abc:[abc,cba], dell:[dell, ledl]}
+        words.forEach((word) => {
+            const sortedWord = sortStrChars(word);
+            if (anagrams[sortedWord]) {
+                return anagrams[sortedWord].push(word);
+            }
+            anagrams[sortedWord] = [word];
+        });
+        return anagrams;
+    }
+      
+    function verficaanagrama() {
+        const arr = [];
+        var count = 0;
+        var str = String(document.querySelector("#str").value);
+        for(i=1; i<str.length; i++){
+            for (j = 0; j < str.length ; j++) {
+                if ((j+i)<= str.length){
+                    arr.push(str.substring(j, j + i));
+                    //console.log(arr);   
+                }
+            }
+            const groupedAnagrams = getGroupedAnagrams(arr);
+            //console.log(groupedAnagrams);
+            for (const sortedWord in groupedAnagrams) {
+                if(groupedAnagrams[sortedWord].length > 1){
+                    console.log(groupedAnagrams[sortedWord].toString());
+                    count++;
+                }
+                
+            }
+            while(arr.length){
+                arr.length = 0;
+                j=0;
+            };
+           
+        }
+        document.getElementById("Resultado").innerHTML = count;
+    }
+    
+</script>
+
+</html>

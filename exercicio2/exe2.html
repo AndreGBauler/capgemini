@@ -13,8 +13,8 @@
         var chEspeciais = /([~,!,@,#,$,%,^,&,*,-,_,+,=,?,>,<])/;
         var pass = String(document.getElementById("password").value);
         mostra = document.getElementById("passwordStrong");
-        console.log(pass);
-        console.log(pass.length);
+        //console.log(pass);
+        //console.log(pass.length);
         if (pass.length < 6){
             mostra.innerHTML = "<span style='color:red'>Fraco, faltam "+(6-pass.length)+" caracteres</span>";
         }else{
@@ -27,44 +27,45 @@
     }
 </script>
 <body>
-    <table>
-        <tr>
-            <td>
-                Requisitos para criação de senha:
-            </td>
-        </tr>
-        <tr>
-            <td>
-                ● Possui no mínimo 6 caracteres.
-            </td>
-        </tr>
-        <tr>
-            <td>
-                ● Contém no mínimo 1 digito.
-            </td>            
-        </tr>
-        <tr>
-            <td>
-                ● Contém no mínimo 1 letra em minúsculo.
-            </td>            
-        </tr>
-        <tr>
-            <td>
-                ● Contém no mínimo 1 letra em maiúsculo.
-            </td>            
-        </tr>
-        <tr>
-            <td>
-                ● Contém no mínimo 1 caractere especial. Os caracteres especiais são: !@#$%^&*()-+
-            </td>            
-        </tr>
-    </table>
+    
 <label>Digite seu nome:</label>
 <input id="nome"/><br>
 <label>Digite sua senha:</label>
 <input id="password" type="password" onkeyup="javascript:verificaSenha()" minlength="6"/>
 <button id="Submit" >OK</button><br>
 <span id="passwordStrong"></span>
+<table>
+    <tr>
+        <td>
+            Requisitos para criação de senha:
+        </td>
+    </tr>
+    <tr>
+        <td>
+            ● Possui no mínimo 6 caracteres.
+        </td>
+    </tr>
+    <tr>
+        <td>
+            ● Contém no mínimo 1 digito.
+        </td>            
+    </tr>
+    <tr>
+        <td>
+            ● Contém no mínimo 1 letra em minúsculo.
+        </td>            
+    </tr>
+    <tr>
+        <td>
+            ● Contém no mínimo 1 letra em maiúsculo.
+        </td>            
+    </tr>
+    <tr>
+        <td>
+            ● Contém no mínimo 1 caractere especial. Os caracteres especiais são: !@#$%^&*()-+
+        </td>            
+    </tr>
+</table>
 </body>
 
 </html>
