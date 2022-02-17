@@ -13,8 +13,6 @@
         var chEspeciais = /([~,!,@,#,$,%,^,&,*,-,_,+,=,?,>,<])/;
         var pass = String(document.getElementById("password").value);
         mostra = document.getElementById("passwordStrong");
-        //console.log(pass);
-        //console.log(pass.length);
         if (pass.length < 6){
             mostra.innerHTML = "<span style='color:red'>Fraco, faltam "+(6-pass.length)+" caracteres</span>";
         }else{
