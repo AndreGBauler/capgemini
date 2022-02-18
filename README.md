@@ -22,7 +22,8 @@
 
 ## Linguagens utilizadas
   - HTML </br>
-  - JavaScript
+  - JavaScript</br>
+  - CSS
   
 ## Testes
   ### Exercício 1 (questão 1)
