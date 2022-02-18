@@ -5,16 +5,66 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Exe01</title>
+
+    <style type="text/css">
+        body {
+            background-color: lightgray;
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+        }
+        h1 {
+            font-size: 1.5em;
+            text-align: center;
+        }
+        div.form {
+            margin: 0 auto;
+            width: 320px;
+            padding: 20px;
+            background-color: white;
+            border-radius: 10px;
+            text-align: center;
+        }
+        div.Resultado{
+            width: fit-content;
+            margin: 0 auto;
+        }
+        input{
+        width: 200px;
+        height: 30px;
+        border-radius: 5px;
+        border: solid 1px #cccccc;
+        padding: 5px;
+        margin: 10px;
+        background-color: #eeeeee;
+        }
+        input:hover{
+            background-color: #ffffff;
+        }
+        button {
+            border-radius: 5px;
+            padding: 10px 40px;
+            background-color: #26b39b;
+            border: 0;
+            font-size: 0.8em;
+            font-weight: bold;
+            color: white;
+        }
+        button:hover{
+                background-color: #2cd8bb;
+        }
+        
+    </style>
 </head>
 <body>
-    <h2>Escreva um algoritmo que mostre na tela uma escada de tamanho n utilizando o caractere *
-        e espacos. A base e altura da escada devem ser iguais ao valor de n. A  ltima linha n o deve conter
-        nenhum espaco.</h2>
-    <textarea>digite o valor:</textarea>
-    <input type="number" id="valor"/>
-    <button>Gerar</button>
     <div>
-        <pre id="Resultado"></pre>
+        <h1>Exercício 1 (questão 1)</h1>
+        <div class="form">
+            <label>Digite o valor:</label><br />
+            <input type="number" id="valor"/><br />
+            <button>Gerar</button>
+        </div>
+        <div class="Resultado">
+            <pre id="Resultado"></pre>
+        </div>
     </div>
 </body>
 <script>
