@@ -4,6 +4,68 @@
 <head>
 <meta charset="UTF-8"/>
 <title>Exe02</title>
+<style type="text/css">
+    body {
+        background-color: lightgray;
+        font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    }
+
+    h1 {
+        font-size: 1.5em;
+        text-align: center;
+    }
+
+    div.form {
+        margin: 0 auto;
+        width: 320px;
+        padding: 20px;
+        background-color: white;
+        border-radius: 10px;
+        text-align: center;
+    }
+    div.requisitos{
+        font-size: small;
+        text-align: left;
+        margin-top: 40px;
+    }
+    div.strong{
+        width: fit-content;
+        margin: 5px auto 15px;
+        font-size: 0.8em;
+    }
+    ul{
+        list-style-type: square;
+    }
+    li {
+        line-height: 1.7em;
+    }
+
+    input{
+        width: 200px;
+        height: 30px;
+        border-radius: 5px;
+        border: solid 1px #cccccc;
+        padding: 5px;
+        margin: 10px;
+        background-color: #eeeeee;
+    }
+    input:hover{
+        background-color: #ffffff;
+    }
+    button {
+        border-radius: 5px;
+        padding: 10px 40px;
+        background-color: #26b39b;
+        border: 0;
+        font-size: 0.8em;
+        font-weight: bold;
+        color: white;
+    }
+    button:hover{
+            background-color: #2cd8bb;
+        }
+
+</style>
 </head>
 <script>
     function verificaSenha(){
@@ -14,56 +76,44 @@
         var pass = String(document.getElementById("password").value);
         mostra = document.getElementById("passwordStrong");
         if (pass.length < 6){
-            mostra.innerHTML = "<span style='color:red'>Fraco, faltam "+(6-pass.length)+" caracteres</span>";
+            mostra.innerHTML = "<div style='padding: 5px 30px;background-color:#e78989;color:#681d1d'>Fraco, faltam "+(6-pass.length)+" caracteres</div>";
         }else{
             if (pass.match(numeros) && pass.match(alfabeto1) && pass.match(alfabeto2) && pass.match(chEspeciais) ){
-                mostra.innerHTML = "<span style='color:green'>Forte</span>";
+                mostra.innerHTML = "<div style='padding: 5px 30px;background-color:#98d398;color:#245024'>Forte</div>";
             } else {
-                mostra.innerHTML = "<span style='color:orange'>Média, favor atender os requisitos</span>";
+                mostra.innerHTML = "<div style='padding: 5px 30px;background-color:#f5d394;color:#8d5f0a'>Média, favor atender os requisitos</div>";
             }
         };
     }
 </script>
 <body>
-    
-<label>Digite seu nome:</label>
-<input id="nome"/><br>
-<label>Digite sua senha:</label>
-<input id="password" type="password" onkeyup="javascript:verificaSenha()" minlength="6"/>
-<button id="Submit" >OK</button><br>
-<span id="passwordStrong"></span>
-<table>
-    <tr>
-        <td>
-            Requisitos para criação de senha:
-        </td>
-    </tr>
-    <tr>
-        <td>
-            ● Possui no mínimo 6 caracteres.
-        </td>
-    </tr>
-    <tr>
-        <td>
-            ● Contém no mínimo 1 digito.
-        </td>            
-    </tr>
-    <tr>
-        <td>
-            ● Contém no mínimo 1 letra em minúsculo.
-        </td>            
-    </tr>
-    <tr>
-        <td>
-            ● Contém no mínimo 1 letra em maiúsculo.
-        </td>            
-    </tr>
-    <tr>
-        <td>
-            ● Contém no mínimo 1 caractere especial. Os caracteres especiais são: !@#$%^&*()-+
-        </td>            
-    </tr>
-</table>
+    <div>
+        <h1>Exercício 2 (questão 2)</h1>
+        <div class="form">
+
+            <label>Digite seu nome:</label><br />
+            <input id="nome"/>
+            <br />
+            <label>Digite sua senha:</label><br />
+            <input id="password" type="password" onkeyup="javascript:verificaSenha()" minlength="6"/>
+            <div id="passwordStrong" class="strong"></div>
+            <button id="Submit" >OK</button>
+            <br />
+
+            <div class="requisitos">
+                <p><b>Requisitos para criação de senha:</b></p>
+                <ul>
+                    <li>Possuir no mínimo 6 caracteres</li>
+                    <li>Conter no mínimo 1 dígito</li>
+                    <li>Conter no mínimo 1 letra em minúsculo</li>
+                    <li>Conter no mínimo 1 letra em maiúsculo</li>
+                    <li>Conter no mínimo 1 caractere especial</li>
+                </ul>
+                Os caracteres especiais são: !@#$%^&*()-+
+            </div>
+
+        </div>
+    </div>
 </body>
 
 </html>

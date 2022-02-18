@@ -6,15 +6,87 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Exe03</title>
+
+    <style type="text/css">
+        body {
+            background-color: lightgray;
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+        }
+    
+        h1 {
+            font-size: 1.5em;
+            text-align: center;
+        }
+    
+        div.form {
+            margin: 0 auto;
+            width: 320px;
+            padding: 20px;
+            background-color: white;
+            border-radius: 10px;
+            text-align: center;
+        }
+
+        div.resultado{
+            margin: 30px auto;
+            width: 320px;
+            padding: 20px;
+            background-color: white;
+            border-radius: 10px;
+            text-align: center;
+            font-weight: bold;
+        }
+        h1.resultado{
+            font-size: 1em;
+        }
+        p#resultado{
+            font-size: 2em;
+        }
+    
+        input{
+            width: 200px;
+            height: 30px;
+            border-radius: 5px;
+            border: solid 1px #cccccc;
+            padding: 5px;
+            margin: 10px;
+            background-color: #eeeeee;
+        }
+        input:hover{
+            background-color: #ffffff;
+        }
+        button {
+            border-radius: 5px;
+            padding: 10px 40px;
+            background-color: #26b39b;
+            border: 0;
+            font-size: 0.8em;
+            font-weight: bold;
+            color: white;
+        }
+        button:hover{
+                background-color: #2cd8bb;
+            }
+    
+    </style>
+
 </head>
 
 <body>
-    <label>digite a string:</label>
-    <input id="str" />
-    <button onclick="verficaanagrama()">Verificar</button>
+
     <div>
-        <pre id="Resultado"></pre>
+        <h1>Exercício 3 (questão 3)</h1>
+        <div class="form">
+            <label>Digite a string:</label><br />
+            <input id="str"/><br />
+            <button onclick="verficaanagrama()">Verificar</button>
+        </div>
+        <div class="resultado">
+            <h1 class="resultado">Resultado:</h1>
+            <p id="resultado"></p>
+        </div>
     </div>
+
 </body>
 <script>
     
@@ -66,7 +138,7 @@
             };
            
         }
-        document.getElementById("Resultado").innerHTML = count;
+        document.getElementById("resultado").innerHTML = count;
     }
     
 </script>
